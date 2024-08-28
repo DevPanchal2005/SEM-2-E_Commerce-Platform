@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.util.Scanner;
 
-import com.E_CommercePlatform.Customer.LoginCustomer;
-import com.E_CommercePlatform.Customer.SignupCustomer;
+import com.E_CommercePlatform.Admin.LoginAdmin;
+import com.E_CommercePlatform.Admin.SignupAdmin;
 
 public class AdminApp {
     public static Connection con;
@@ -32,12 +32,12 @@ public class AdminApp {
 
             switch (ch) {
                 case 1:
-                    LoginCustomer loginCustomer = new LoginCustomer();
-                    loginCustomer.login();
+                    LoginAdmin loginAdmin = new LoginAdmin();
+                    loginAdmin.login();
                     break;
                 case 2:
-                    SignupCustomer signupCustomer = new SignupCustomer();
-                    signupCustomer.signup();
+                    SignupAdmin signupAdmin = new SignupAdmin();
+                    signupAdmin.signup();
                     break;
                 case 3:
                     System.out.println("Thank you for Visiting");
