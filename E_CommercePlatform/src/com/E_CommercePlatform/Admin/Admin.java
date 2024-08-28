@@ -108,10 +108,19 @@ public class Admin extends AdminApp {
 
 			String name = validator.getStringInput("Enter new name (leave empty to keep current): ", 20);
 			int age = validator.getIntInput("Enter age (enter 0 to keep current): ", 1, 3);
-			String email = validator.setValidEmail();
+			String email="";
+			String contact="";
+			String password = "";
+			if(validator.choiceMaker("Do You Want to Change Email")){
+				email = validator.setValidEmail();
+			}
 			String address = validator.getStringInput("Enter new address (leave empty to keep current): ", 20);
-			String contact = validator.setValidPhoneNumber();
-			String password = validator.encryptPassword(validator.setValidPassword());
+			if(validator.choiceMaker("Do You Want to Change Phone Number")){
+				contact = validator.setValidPhoneNumber();
+			}
+			if(validator.choiceMaker("Do You Want to Change Phone Number")){
+				password = validator.encryptPassword(validator.setValidPassword());
+			}
 
 			pst.setString(1, name);
 			pst.setInt(2, age);
